@@ -167,16 +167,28 @@ def main():
                                                             print(f"Обработано {position_count} записей в таблицу treatment_descriptions")
                                                             print()
                                                         except Exception as ex:
+                                                            with open("logs.txt", "a", encoding="utf-8") as file:
+                                                                file.write(f"{ex}\n")
                                                             continue
                                                 except Exception as ex:
+                                                    with open("logs.txt", "a", encoding="utf-8") as file:
+                                                        file.write(f"{ex}\n")
                                                     continue
                                         except Exception as ex:
+                                            with open("logs.txt", "a", encoding="utf-8") as file:
+                                                file.write(f"{ex}\n")
                                             continue
                                 except Exception as ex:
+                                    with open("logs.txt", "a", encoding="utf-8") as file:
+                                        file.write(f"{ex}\n")
                                     continue
                     except Exception as ex:
+                        with open("logs.txt", "a", encoding="utf-8") as file:
+                            file.write(f"{ex}\n")
                         continue
             except Exception as ex:
+                with open("logs.txt", "a", encoding="utf-8") as file:
+                    file.write(f"{ex}\n")
                 continue
     finally:
         browser.close()
